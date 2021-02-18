@@ -99,7 +99,7 @@ func genGoFieldName(name string) (fieldName string) {
 		fieldName += MakeFirstUpperCase(str)
 	}
 	var tmp string
-	for _, str := range strings.Split(fieldName, ".") {
+	for _, str := range strings.Split(fieldName, "-") {
 		tmp += MakeFirstUpperCase(str)
 	}
 	fieldName = tmp
@@ -112,7 +112,7 @@ func genGoFieldType(name string) string {
 		return name
 	}
 	var fieldType string
-	for _, str := range strings.Split(name, ".") {
+	for _, str := range strings.Split(name, "-") {
 		fieldType += MakeFirstUpperCase(str)
 	}
 	fieldType = strings.Replace(MakeFirstUpperCase(strings.Replace(fieldType, "-", "", -1)), "_", "", -1)
